@@ -1,0 +1,22 @@
+{"id": 1, "skill": "locate", "query": "Where is the auth middleware?", "expect": {"any_of": ["auth_middleware.py"]}}
+{"id": 2, "skill": "locate", "query": "Where is the rate limiter implemented?", "expect": {"any_of": ["rate_limiter.py"]}}
+{"id": 3, "skill": "locate", "query": "Where is the payment webhook handler?", "expect": {"any_of": ["payment_webhook.py"]}}
+{"id": 4, "skill": "locate", "query": "Where is the search index built?", "expect": {"any_of": ["build_search_index"]}}
+{"id": 5, "skill": "locate", "query": "Where is the background job queue worker?", "expect": {"any_of": ["job_worker.py"]}}
+{"id": 6, "skill": "locate", "query": "Where is the email sending code?", "expect": {"any_of": ["send_email"]}}
+{"id": 7, "skill": "locate", "query": "Where are settings loaded from the environment?", "expect": {"any_of": ["load_settings"]}}
+{"id": 8, "skill": "locate", "query": "What script runs the test suite?", "expect": {"any_of": ["run_tests.sh"]}}
+{"id": 9, "skill": "locate", "query": "Where is the deployment script?", "expect": {"any_of": ["deploy.sh"]}}
+{"id": 10, "skill": "locate", "query": "Where is logging configured?", "expect": {"any_of": ["configure_logging"]}}
+{"id": 11, "skill": "ask_librarian", "query": "How does a request get authenticated before it reaches a route handler?", "expect": {"any_of": ["require_session"]}}
+{"id": 12, "skill": "ask_librarian", "query": "What happens when a client exceeds the rate limit?", "expect": {"any_of": ["RateLimitExceeded"]}}
+{"id": 13, "skill": "ask_librarian", "query": "How are payment webhook signatures verified?", "expect": {"any_of": ["verify_signature"]}}
+{"id": 14, "skill": "ask_librarian", "query": "How are failed background jobs retried?", "expect": {"any_of": ["retry_with_backoff"]}}
+{"id": 15, "skill": "ask_librarian", "query": "Where is the search index rebuilt and how often?", "expect": {"any_of": ["reindex_nightly"]}}
+{"id": 16, "skill": "brief", "query": "Add an order confirmation email sent after checkout", "expect": {"any_of": ["send_email", "order_confirmation.html"]}}
+{"id": 17, "skill": "brief", "query": "Add a per-user daily export limit using the existing rate limiter", "expect": {"any_of": ["RateLimiter"]}}
+{"id": 18, "skill": "brief", "query": "Add a new environment variable for the webhook timeout", "expect": {"any_of": ["load_settings"]}}
+{"id": 19, "skill": "depends", "query": "payments-module", "expect": {"any_of": ["checkout-service"]}}
+{"id": 20, "skill": "depends", "query": "auth-middleware", "expect": {"any_of": ["session-store"]}}
+{"id": 21, "skill": "ask_librarian", "query": "Is there an existing Kubernetes or Docker deployment setup?", "expect": {"any_of": ["deploy.sh"]}}
+{"id": 22, "skill": "ask_librarian", "query": "Do we have a GraphQL API?", "expect": {"any_of": ["rest_routes.py"]}}

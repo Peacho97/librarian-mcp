@@ -1,0 +1,15 @@
+name: grader self-check
+on: [push, pull_request]
+jobs:
+  grader-self-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+      - run: python -m unittest discover tests
+      # Exits 1 if the fixture score is below 90%, which fails the job.
+      - name: Grader self-check (fixture eval)
+        run: python eval/run.py --fixture eval/fixtures/answers.jsonl

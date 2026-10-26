@@ -1,0 +1,22 @@
+{"id": 1, "answer": "src/web/auth_middleware.py:24 [function] require_session"}
+{"id": 2, "answer": "src/web/rate_limiter.py:11 [class] RateLimiter"}
+{"id": 3, "answer": "src/payments/payment_webhook.py:40 [function] handle_webhook"}
+{"id": 4, "answer": "src/search/indexer.py:18 [function] build_search_index"}
+{"id": 5, "answer": "src/jobs/job_worker.py:9 [function] run_worker"}
+{"id": 6, "answer": "src/notify/mailer.py:33 [function] send_email"}
+{"id": 7, "answer": "src/config/settings.py:15 [function] load_settings"}
+{"id": 8, "answer": "scripts/run_tests.sh:1"}
+{"id": 9, "answer": "scripts/deploy.sh:1"}
+{"id": 10, "answer": "src/app/log.py:7 [function] configure_logging"}
+{"id": 11, "answer": "auth_middleware.py wraps each handler with require_session, which reads the session cookie and loads the user."}
+{"id": 12, "answer": "RateLimiter.check raises RateLimitExceeded, which the error handler turns into a 429 response."}
+{"id": 13, "answer": "handle_webhook calls verify_signature with the shared secret before parsing the body."}
+{"id": 14, "answer": "job_worker.py wraps each job in retry_with_backoff, up to five attempts."}
+{"id": 15, "answer": "reindex_nightly in indexer.py is scheduled once per night and calls build_search_index."}
+{"id": 16, "answer": "Reuse send_email from mailer.py and add templates/order_confirmation.html."}
+{"id": 17, "answer": "Subclass or configure RateLimiter in rate_limiter.py with a per-user key and a 24 hour window."}
+{"id": 18, "answer": "Add the field to load_settings in settings.py and read it in handle_webhook."}
+{"id": 19, "answer": "{\"dependents\": [\"checkout-service\", \"refund-service\"], \"depends_on\": [\"settings\"]}"}
+{"id": 20, "answer": "{\"dependents\": [\"admin-routes\"], \"depends_on\": [\"session-store\"]}"}
+{"id": 21, "answer": "No Kubernetes manifests or Dockerfile exist. Deployment is the shell script scripts/deploy.sh."}
+{"id": 22, "answer": "No GraphQL. The API is REST only, defined in rest_routes.py."}

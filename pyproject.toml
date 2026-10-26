@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "librarian-mcp"
+version = "0.1.0"
+description = "MCP stdio client giving coding agents whole-machine code retrieval from a private engine over HTTP"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.12"
+dependencies = ["mcp>=1.2"]
+
+[project.scripts]
+librarian-mcp = "mcp_server:main"
+
+[project.urls]
+Homepage = "https://github.com/Peacho97/librarian-mcp"
+
+[tool.setuptools]
+py-modules = ["mcp_server"]
